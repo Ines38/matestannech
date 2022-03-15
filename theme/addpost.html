@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+  <style>#success_message{ display: none;}</style>
+</head>
+   
+<style>
+  .login-card-purple {
+    background: linear-gradient(145deg, #673AB7, #9C27B0);
+}
+
+.login-card-yellow {
+    background: linear-gradient(145deg, #FFC107, #FFEB3B);
+}
+
+.login-card-light {
+    background: linear-gradient(145deg, #eee, #fff);
+}
+
+.login-dark {
+    background: linear-gradient(145deg, #575b5d, #252b2d);
+}
+
+.login-blue {
+    background: linear-gradient(145deg, #2196F3, #3F51B5);
+}
+
+.login-purple-pink {
+    background: linear-gradient(145deg, #3F51B5, #E91E63);
+}
+
+body {
+    font-size: 13px;
+}
+</style>
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  
+  <body>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!------ Include the above in your HEAD tag ---------->
+  
+  <div class="container">
+      
+          <div class="col-4  center">
+              <div class="login-dark p-3 shadow-lg rounded">
+                  <div class="pt-3">
+                      <h2 class="text-white ">Create new post</h2>
+                  </div>
+  
+                  <form class="mt-5">
+                      <div class="form-group">
+                          <input id="gouv" 
+                              class="form-control form-control-sm bg-light" 
+                              placeholder="gouvernement">
+                      </div>
+
+                      <div class="form-group">
+                        <input id="ad"  
+                            class="form-control form-control-sm bg-light" 
+                            placeholder="post adress">
+                    </div>
+                      <div class="form-group">
+                          <input id="pn" 
+                              class="form-control form-control-sm bg-light" 
+                              placeholder="post name">
+                      </div>
+  
+                    
+  
+                      <div class="mt-5">
+                          <button class="btn btn-sm btn-light col" onclick="window.location.href='admin.html'">
+                              Create
+                          </button>
+                      </div>
+  
+                      
+                      
+                      
+                  </form>
+              </div>
+          </div>
+      </div>
+  
+      
+  </div>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="code.js"></script>
+<script src="plugins/jquery-2.2.4.min.js"></script>
+<script src="plugins/bootstrap/bootstrap.min.js"></script>
+<script src="plugins/jquery.nicescroll.min.js"></script>
+<script src="plugins/isotope/isotope.pkgd.min.js"></script>
+<script src="plugins/slick/slick.min.js"></script>
+<script>
+     $("#login-btn").on('click' , function (event) {
+            event.preventDefault();
+            var gouvernement = $("#gouv").val();
+            var postAdress = $("#ad").val();
+            var postName=$("#pn").val();
+  console.log(password,name)})
+</script>
+</body>
+</html>

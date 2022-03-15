@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <!--/Style-CSS -->
+    <link rel="stylesheet" href="css\style1.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--for social icons-->
+    <!--//Style-CSS -->
+</head>
+
+<body>
+
+    <!-- form section start -->
+    <section class="w3l-workinghny-form">
+        <!-- /form -->
+        <div class="workinghny-form-grid">
+            <div class="wrapper">
+                <div class="logo">
+                    <h1><a class="brand-logo" href="index.html"><span>Rejoignez</span> Le Site</a></h1>
+                </div>
+                <div class="workinghny-block-grid">
+                    <div class="workinghny-left-img align-end">
+                        <img src="images\post.png" class="img-responsive" alt="img" />
+                    </div>
+                    <div class="form-right-inf">
+
+                        <div class="login-form-content">
+                            <h2>Where to?</h2>
+                            <form action="#" class="signin-form" method="post">
+                                <div class="one-frm">
+
+                                    <label>Nom</label>
+                                    <input type="text" id="name" name="Name" placeholder="" required="">
+                                </div>
+                                <div class="one-frm">
+                                    <label>Mot de passe </label>
+                                    <input type="password" id="password" name="Password" placeholder="" required="">
+                                </div>
+                                <label class="check-remaind">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    <p class="remember">Se souvenir de Moi</p>
+
+                                </label>
+                                <button id="login-btn" class="btn btn-style mt-3">S'identifier </button>
+                                <p class="already">Vous n'avez pas un compte? <a href="#signup" onclick="signup()">Créer un compte</a></p>
+                                <p class="already">Vous voulez s'identifier avec?</p>
+                                <div id="message"></div>
+                                <!-- Add font awesome icons -->
+                                <div class="icons">
+                                    <br>
+                                    <a href="#" class="fa fa-facebook"></a>
+                                    <a href="#" class="fa fa-twitter"></a>
+                                    <a href="#" class="fa fa-google"></a>
+                                </div>
+
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="prb1"></div>
+        </div>
+
+        <!-- //form -->
+        <!-- copyright-->
+       
+        <!-- //copyright-->
+    </section>
+    <!-- //form section start -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="code.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#login-btn").on('click' , function (event) {
+           event.preventDefault();
+            var name = $("#name").val();
+            var  password = $("#password").val();
+
+            
+    var data={
+            username:name,
+            userPassword:password}
+            console.log(data);
+            if(password!='' && name!=''){
+                console.log("login request");
+                $.ajax({
+                    contentType:"application/json",
+                    url: "localhost:2020/user/login",
+                    data: JSON.stringify( data),
+                    dataType: 'json',
+                    contentType: "application/json",
+                    success: function(msg) {
+                      
+                    }})
+                    window.location.href="services.html"
+                      
+                }else{
+                    document.getElementById("name").style.border = "solid 1px red";
+                    document.getElementById("password").style.border = "solid 1px red";
+                    console.log("else")
+                    insertIn='<div style="float:right"><h3 style="color: crimson; " >Warrning</h3> <p style="color: crimson;">try again enter your username and password </p></div>';
+
+                $("#message").html(insertIn);
+                }  
+
+
+        })
+           
+        
+            //window.location.href="signup.html"
+        }
+        
+        
+    //   $.get({url: "http://localhost:2020/post", success: function(result){
+    //     insertIn = "";
+    //     result.forEach(element => insertIn += '<option value="'+element.id+'">'+element.postName+'</option>');
+    //     $("#pet-select").html(insertIn);
+    //   }});
+  
+  );  
+  function signup(){
+          window.location.href="signup.html"
+            }
+  </script>
+</body>
+
+</html>

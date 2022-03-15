@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+   <style>
+       @import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css');
+        html,body {
+          background-image: url('https://thd.tn/wp-content/uploads/2017/05/www.investir-en-tunisie.net_images_articles_poste_tunisie14.jpg');
+
+        height: 100%
+        }
+   </style> 
+</head>
+<body id="adminhome"  class="h-100 row align-items-center" onload="adming();" style="background-color: aliceblue;">
+<div class="container well" style="background-color: #f3f5f5;">
+    <center>
+        
+    <div style="margin: auto; text-align: center;" >
+     <center> <h1 style="color: rgb(51, 51, 51);">Posts</h1></center>
+      <select id="postes2" name="post" id="postes2" size="10" class="col">
+    </select>
+    </div>
+    <center>
+    <div class="row">
+       
+        <button type="button" class="btn btn-primary btn-lg" style="margin: auto;" onclick="window.location.href='addpost.html'">add post</button>
+        <button type="button" class="btn btn-primary btn-lg"style="margin: auto;background-color:#00bdbd;" onclick=""> add Supervisor for post</button>
+       
+      </div>
+    </center>
+    </center>
+</div>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="code.js"></script>
+<script src="plugins/jquery-2.2.4.min.js"></script>
+<script src="plugins/bootstrap/bootstrap.min.js"></script>
+<script src="plugins/jquery.nicescroll.min.js"></script>
+<script src="plugins/isotope/isotope.pkgd.min.js"></script>
+<script src="plugins/slick/slick.min.js"></script>
+<script>
+  async function adming(){
+console.log("mouhab")
+postes1 =JSON.parse(localStorage.getItem("postes") )|| "[]";
+console.log('postes',postes1)
+var insertIn='<option style="border: solid 1px rgb(67, 67, 73);text-align:center;color:red" >id / gouvernement / postAdress / postname </option>'
+
+    postes1.forEach(element=>{
+        insertIn+='<h1>mouhab</h1>'
+        insertIn+=' <option style="border: solid 1px rgb(67, 67, 73);text-align:center;" >'+element.postId+' / '+element.gouvernement+' / '+element.postAdress+' / '+element.postName+'</option>'
+       console.log(element)
+    })
+    console.log(insertIn);
+$("#postes2").html(insertIn);
+
+}
+function addpost(){
+  
+}
+
+</script>
+</body>
+</html>
